@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    ports:
+      - "8000:8000"
+
+  frontend:
+    image: python:3.11
+    working_dir: /app
+    volumes:
+      - ..:/app:cached
+    ports:
+      - "8500:8500"
+    command: bash -lc "pip install --no-cache-dir -r requirements.txt && python -m streamlit run frontend/dashboard.py --server.port 8500 --server.headless true"

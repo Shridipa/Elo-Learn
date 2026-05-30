@@ -1,0 +1,100 @@
+# Environment
+.env
+.env.local
+.env.*.local
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-workspace
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.hypothesis/
+
+# ML/Data
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.pt
+*.pth
+checkpoints/
+logs/
+temp_lightfm_download/
+# preserve runtime dataset and result files
+!datasets/*.csv
+!datasets/concept_graph.json
+!datasets/embeddings.json
+!datasets/student_embeddings.json
+!results/*.json
+# keep schema files that describe dataset structure
+!datasets/schemas/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+pgdata/
+
+# Logs
+*.log
+logs/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+.cache/
+
+# OS
+Thumbs.db
+.DS_Store
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+*.ipynb
+
+# Weights & Biases
+wandb/
+
+# VS Code
+.vscode/settings.json
+.vscode/launch.json
+
+# Docker
+docker-compose.override.yml

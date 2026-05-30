@@ -1,0 +1,171 @@
+{
+  "nodes": [
+    {
+      "id": "Linear Algebra Basics",
+      "difficulty": 0.4,
+      "category": "Mathematics"
+    },
+    {
+      "id": "Vectors",
+      "difficulty": 0.5,
+      "category": "Mathematics"
+    },
+    {
+      "id": "Matrices",
+      "difficulty": 0.6,
+      "category": "Mathematics"
+    },
+    {
+      "id": "Matrix Operations",
+      "difficulty": 0.65,
+      "category": "Mathematics"
+    },
+    {
+      "id": "Eigenvalues and Eigenvectors",
+      "difficulty": 0.7,
+      "category": "Mathematics"
+    },
+    {
+      "id": "Neural Network Basics",
+      "difficulty": 0.5,
+      "category": "Deep Learning"
+    },
+    {
+      "id": "Activation Functions",
+      "difficulty": 0.6,
+      "category": "Deep Learning"
+    },
+    {
+      "id": "Backpropagation",
+      "difficulty": 0.7,
+      "category": "Deep Learning"
+    },
+    {
+      "id": "Attention Mechanisms",
+      "difficulty": 0.7,
+      "category": "Deep Learning"
+    },
+    {
+      "id": "Transformer Architecture",
+      "difficulty": 0.8,
+      "category": "Deep Learning"
+    },
+    {
+      "id": "Python Fundamentals",
+      "difficulty": 0.3,
+      "category": "Programming"
+    },
+    {
+      "id": "Python Data Structures",
+      "difficulty": 0.5,
+      "category": "Programming"
+    },
+    {
+      "id": "NumPy Basics",
+      "difficulty": 0.5,
+      "category": "Programming"
+    },
+    {
+      "id": "Pandas",
+      "difficulty": 0.6,
+      "category": "Programming"
+    }
+  ],
+  "edges": [
+    {
+      "source": "Linear Algebra Basics",
+      "target": "Vectors",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Linear Algebra Basics",
+      "target": "Matrices",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Vectors",
+      "target": "Matrices",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Matrices",
+      "target": "Matrix Operations",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Matrices",
+      "target": "Eigenvalues and Eigenvectors",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Matrix Operations",
+      "target": "Eigenvalues and Eigenvectors",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Linear Algebra Basics",
+      "target": "Neural Network Basics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Neural Network Basics",
+      "target": "Activation Functions",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Activation Functions",
+      "target": "Backpropagation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Matrices",
+      "target": "Backpropagation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Neural Network Basics",
+      "target": "Attention Mechanisms",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Matrices",
+      "target": "Attention Mechanisms",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Attention Mechanisms",
+      "target": "Transformer Architecture",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Backpropagation",
+      "target": "Transformer Architecture",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Python Fundamentals",
+      "target": "Python Data Structures",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Python Fundamentals",
+      "target": "NumPy Basics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Linear Algebra Basics",
+      "target": "NumPy Basics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "NumPy Basics",
+      "target": "Pandas",
+      "type": "prerequisite"
+    },
+    {
+      "source": "Python Data Structures",
+      "target": "Pandas",
+      "type": "prerequisite"
+    }
+  ]
+}
