@@ -1,40 +1,33 @@
 ﻿# Elo Learn
 
-A research-oriented adaptive learning platform built with FastAPI and Streamlit.
+Elo Learn is an adaptive learning prototype built with FastAPI and Streamlit. The code is meant to show how student mastery, concept reasoning, recommendation logic and review scheduling can work together in one package.
 
-Elo Learn combines student interaction modeling, concept mastery tracking, knowledge graph reasoning, explainable recommendations, and spaced-repetition scheduling into a coherent research prototype.
+I built this project to explore a practical student modeling workflow: track performance, surface the right next topics, explain recommendations, and schedule review tasks in a compact dashboard.
 
 ## What it does
 
-- Estimates per-concept mastery using Bayesian Knowledge Tracing (BKT).
-- Builds student and topic embeddings for similarity and evidence-based recommendation.
-- Uses a knowledge graph to reason about prerequisites, readiness, and remediation.
-- Generates explainable learning recommendations with peer evidence and mastery signals.
-- Schedules reviews with SM2 spacing and forecasts retention.
-- Surfaces instructor-facing cohort analytics and at-risk learners.
+- Tracks student progress across topics using a Bayesian Knowledge Tracing implementation.
+- Builds student and concept embeddings to compare mastery patterns and peer behavior.
+- Uses a concept graph to identify prerequisites, readiness and remediation steps.
+- Produces explainable recommendations with topic evidence and confidence signals.
+- Schedules review sessions using an SM2-inspired spaced repetition routine.
+- Shows cohort metrics and identifies students who need instructor attention.
 
-## Key features
+## Why it matters
 
-- Knowledge Tracing: student mastery over topics from interaction history.
-- Explainable Recommendations: hybrid recommender with explicit reasoning.
-- Knowledge Graph Reasoning: prerequisite chains and remediation plans.
-- Spaced Repetition: SM2 review scheduling for retained learning.
-- Instructor Analytics: cohort summaries and at-risk detection.
-- Benchmark Lab: offline model comparison with precision, recall, NDCG, and MRR.
+This project is not just a demo. It is a working research prototype for adaptive learning that combines multiple educational signals in one place. It is designed to be easy to run locally and to demonstrate how analytics can support both individual learners and instructors.
 
-## Architecture
+## Project structure
 
-The project is organized as follows:
-
-- `backend/`: FastAPI application, recommendation endpoints, knowledge tracing, instructor analytics, and spaced repetition.
-- `frontend/`: Streamlit dashboard for student and instructor views.
+- `backend/`: FastAPI application, endpoints for recommendations, mastery, coach analytics, and review scheduling.
+- `frontend/`: Streamlit dashboard with student and instructor views.
 - `recommendation_engine/`: baseline and explainable recommendation models.
-- `knowledge_graph/`: concept graph reasoning utilities.
-- `ml_models/`: student embedding generation and feature engineering.
-- `datasets/`: data artifacts and interaction records.
-- `tests/`: unit and integration tests.
+- `knowledge_graph/`: concept dependency reasoning and readiness calculations.
+- `ml_models/`: embedding generation and feature engineering for students and topics.
+- `datasets/`: static artifacts and example student interactions.
+- `tests/`: automated checks for algorithms and backend endpoints.
 
-## Installation
+## Setup
 
 Requirements: Python 3.10+.
 
@@ -54,7 +47,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Running locally
+## Run locally
 
 Start the backend:
 
@@ -68,22 +61,22 @@ Start the frontend:
 python -m streamlit run frontend/dashboard.py --server.port 8500
 ```
 
-Open `http://localhost:8500` to view the dashboard.
+Open http://localhost:8500 in your browser to use the dashboard.
 
-## Selected API endpoints
+## Important endpoints
 
-- `GET /students/{student_id}/mastery`
-- `GET /recommendations/{student_id}?model=hybrid&top_k=5`
-- `POST /recommend/explain_v2`
-- `GET /kg/path?topic={topic}`
-- `GET /instructor/cohort_overview?weak_threshold=0.65`
-- `GET /instructor/at_risk?mastery_threshold=0.6&max_results=50`
-- `GET /reviews/due/{student_id}`
-- `GET /recommend/benchmark?top_k=5&evaluation=full`
+- `GET /students/{student_id}/mastery`: student mastery map
+- `GET /recommendations/{student_id}?model=hybrid&top_k=5`: explainable recommendations
+- `POST /recommend/explain_v2`: recommendation explanations
+- `GET /kg/path?topic={topic}`: concept prerequisite path
+- `GET /instructor/cohort_overview?weak_threshold=0.65`: cohort analytics summary
+- `GET /instructor/at_risk?mastery_threshold=0.6&max_results=50`: at-risk student list
+- `GET /reviews/due/{student_id}`: review topics due now
+- `GET /recommend/benchmark?top_k=5&evaluation=full`: recommendation benchmark comparison
 
-## Testing
+## Tests
 
-Run the test suite with:
+Run the full suite with:
 
 ```bash
 pytest -q
